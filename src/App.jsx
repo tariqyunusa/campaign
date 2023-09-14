@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 
 import "./App.css";
 import Navigation from "./components/Navigation";
-import Landing from "./components/landing.jsx";
+import Landing from "../src/components/landing.jsx";
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
