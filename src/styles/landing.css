@@ -40,7 +40,7 @@ video {
 
 @media only screen and (max-width: 500px) {
   .main_text {
-    width: 90%;
+    width: 80%;
   }
   .main_text h1 {
     font-size: 3rem;
