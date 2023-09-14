@@ -4,27 +4,48 @@
   box-sizing: border-box;
 }
 .conatiner {
+  margin-top: 2rem;
   width: 100%;
   height: 90vh;
   display: flex;
   flex-direction: column;
   place-items: center;
+  justify-content: space-between;
 }
 .main_text {
-  width: 90%;
-  margin: auto;
+  width: 85vw;
   text-align: center;
-  height: 20%;
+  height: 10vh;
 }
-.video__container {
-  width: 80%;
-  height: 50%;
-  display: none;
+.main_text h1 {
+  font-size: 4.5rem;
 }
 .video {
-  display: none;
+  width: 80%;
+  height: 50%;
+  /* padding-top: 2rem; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
 section {
   width: 100%;
   height: 90vh;
+}
+video {
+  width: 90%;
+  border-radius: 0.5rem 0.5rem 0 0;
+}
+
+@media only screen and (max-width: 500px) {
+  .main_text {
+    width: 90%;
+  }
+  .main_text h1 {
+    font-size: 3rem;
+  }
+  .video {
+    width: 100%;
+  }
 }
