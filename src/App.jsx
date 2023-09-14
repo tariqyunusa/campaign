@@ -1,9 +1,12 @@
 import { useEffect, useState } from "react";
 
 import "./App.css";
+import Navigation from "./components/Navigation";
+import Landing from "./components/landing";
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
+  const [ishoveringLink, setIsHoveringLink] = useState(false);
 
   useEffect(() => {
     function handleMouseMove(e) {
@@ -17,9 +20,11 @@ function App() {
   return (
     <>
       <div
-        className="cursor"
+        className={`cursor ${ishoveringLink ? "scaling" : ""}`}
         style={{ top: cursorPosition.top, left: cursorPosition.left }}
       ></div>
+      <Navigation setIsHoveringLink={setIsHoveringLink} />
+      <Landing setIsHoveringLink={setIsHoveringLink} />
     </>
   );
 }

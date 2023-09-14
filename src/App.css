@@ -6,6 +6,7 @@
 body {
   background: #000;
   cursor: none;
+  overflow-x: hidden;
 }
 .cursor {
   position: absolute;
@@ -20,4 +21,5 @@ body {
   pointer-events: none;
   transition: all 0.3s ease;
   transition-property: background, transform;
+  z-index: 1;
 }
