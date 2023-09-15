@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import Landing from "./components/landing";
+import Landing from "./components/Landing";
 import "./App.css";
 import Navigation from "./components/Navigation";
 
