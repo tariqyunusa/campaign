@@ -1,6 +1,5 @@
 import React, { useState, useRef } from "react";
 import "../styles/Navigation.css";
-import { AiOutlineMenu } from "react-icons/ai";
 import { FaTimes, FaBars, FaHandHolding } from "react-icons/fa";
 
 function Navigation({ setIsHoveringLink }) {
