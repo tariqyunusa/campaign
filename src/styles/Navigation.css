@@ -5,7 +5,7 @@ body {
 .cursor.scaling {
   transform: scale(5);
 }
-header {
+.header_nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -14,13 +14,13 @@ header {
   padding: 0 2rem;
   background-color: black;
 }
-header a {
+.header_nav a {
   margin: 0 1rem;
   text-decoration: none;
   color: white;
   cursor: none;
 }
-header a:hover {
+.header_nav a:hover {
   color: black;
   z-index: 11;
 }
@@ -41,7 +41,7 @@ nav li {
 nav li:hover {
   color: black;
 }
-header .nav-btn {
+.header_nav .nav-btn {
   padding: 5px;
   cursor: none;
   background: transparent;
@@ -59,11 +59,11 @@ button {
   .reach {
     display: none;
   }
-  header .nav-btn {
+  .header_nav .nav-btn {
     display: block;
     opacity: 1;
   }
-  header nav {
+  .header_nav nav {
     position: fixed;
     top: 0;
     left: 0;

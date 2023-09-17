@@ -19,7 +19,7 @@ function Navigation({ setIsHoveringLink }) {
 
   return (
     <>
-      <header>
+      <header className="header_nav">
         <div className="logo">
           <h2>CAMPAIGN</h2>
         </div>
