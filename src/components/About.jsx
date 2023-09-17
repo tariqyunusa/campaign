@@ -5,7 +5,7 @@ const About = () => {
   return (
     <>
       <div className="container">
-        <header>
+        <header className="about_header">
           <h1>
             INCORPORATE WISDOM AND BRILLIANCE OF THE PAST WITH FAST FORWARD
             THINKING AND AN INNOVATIVE VISION FOR THE FUTURE

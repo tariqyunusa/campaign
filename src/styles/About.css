@@ -12,12 +12,12 @@
   position: relative;
   top: 2rem;
 }
-.container header {
+.container .about_header {
   width: 65%;
   padding: 2rem;
   text-align: start;
 }
-.container header h1 {
+.container .about_header h1 {
   font-size: 2.5rem;
 }
 section {
@@ -68,11 +68,15 @@ section {
     width: 100%;
     padding: 0;
   }
-  .container header {
+  .container .about_header {
     width: 100%;
-    padding: 0.2rem;
+    height: 0;
+    padding: 0;
   }
-  .container header h1 {
+  .container .about_header h1 {
     font-size: 1.5rem;
+  }
+  .right_side h3 {
+    font-size: 1.2rem;
   }
 }
