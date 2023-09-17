@@ -1,6 +1,6 @@
 import React, { useState, useRef } from "react";
 import "../styles/Navigation.css";
-import { FaTimes, FaBars, FaHandHolding } from "react-icons/fa";
+import { FaTimes, FaBars } from "react-icons/fa";
 
 function Navigation({ setIsHoveringLink }) {
   const handleMouseEnter = () => {

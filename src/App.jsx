@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import Landing from "./components/Landing";
 import "./App.css";
+import About from "./components/About";
 import Navigation from "./components/Navigation";
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       window.removeEventListener("mousemove", handleMouseMove);
     };
   }, []);
+
   return (
     <>
       <div
@@ -24,6 +26,7 @@ function App() {
       ></div>
       <Navigation setIsHoveringLink={setIsHoveringLink} />
       <Landing setIsHoveringLink={setIsHoveringLink} />
+      <About />
     </>
   );
 }
