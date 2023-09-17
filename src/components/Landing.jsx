@@ -12,7 +12,7 @@ const landing = ({ setIsHoveringLink }) => {
   };
 
   return (
-    <section className="conatiner">
+    <section className="landing">
       <div className="main_text">
         <h1>Where The Genius Of History Meets The Vision Of Tomorrow.</h1>
       </div>

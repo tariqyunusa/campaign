@@ -4,13 +4,13 @@ import "../styles/About.css";
 const About = () => {
   return (
     <>
-      <div className="container">
-        <header className="about_header">
+      <div className="about">
+        <div className="about_header">
           <h1>
             INCORPORATE WISDOM AND BRILLIANCE OF THE PAST WITH FAST FORWARD
             THINKING AND AN INNOVATIVE VISION FOR THE FUTURE
           </h1>
-        </header>
+        </div>
         <section>
           <div className="left_side">
             <h1>*</h1>
