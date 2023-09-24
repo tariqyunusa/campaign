@@ -22,6 +22,7 @@ body {
   transition: all 0.3s ease;
   transition-property: background, transform;
   z-index: 1;
+  /* mix-blend-mode: difference; */
 }
 @media only screen and (max-width: 600px) {
   .cursor {

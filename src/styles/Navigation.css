@@ -44,6 +44,7 @@ nav li {
 }
 nav li:hover {
   color: black;
+  z-index: 9999;
 }
 header .nav-btn {
   padding: 5px;
@@ -102,5 +103,9 @@ button {
   }
   nav a {
     font-size: 1.5rem;
+  }
+  header {
+    background-color: black;
+    mix-blend-mode: normal;
   }
 }
