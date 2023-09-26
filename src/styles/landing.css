@@ -38,12 +38,15 @@ section {
 }
 video {
   width: 80%;
-  border-radius: 0.5rem 0.5rem 0 0;
 }
 
 @media only screen and (max-width: 800px) {
   .main_text {
     width: 90%;
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
   .main_text h1 {
     font-size: 3rem;
@@ -51,5 +54,34 @@ video {
   .video {
     width: 100%;
     height: 90%;
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    position: relative;
+    top: -4rem;
+  }
+  video {
+    z-index: -1;
+  }
+}
+@media only screen and (max-width: 425px) {
+  .main_text h1 {
+    font-size: 2rem;
+  }
+  .main_text {
+    height: 50vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .video {
+    border-top-right-radius: 0px;
+    border-top-left-radius: 0px;
+    position: relative;
+    top: -4rem;
+  }
+  video {
+    width: 100%;
+    padding: 1rem;
+    z-index: -1;
   }
 }
