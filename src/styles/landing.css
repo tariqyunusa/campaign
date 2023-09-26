@@ -3,6 +3,9 @@
   padding: 0;
   box-sizing: border-box;
 }
+body {
+  cursor: none;
+}
 .landing {
   margin-top: 7rem;
   width: 100%;
