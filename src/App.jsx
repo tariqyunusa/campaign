@@ -4,16 +4,18 @@ import "./App.css";
 import About from "./components/About";
 import Navigation from "./components/Navigation";
 import Work from "./components/Work";
+import Review from "./components/Review";
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
   const [ishoveringLink, setIsHoveringLink] = useState(false);
   const [isHoveringWork, setIsHoveringWork] = useState(false);
-
+  const [reviewCursor, setReviewCursor] = useState({ x: 0, y: 0 });
   useEffect(() => {
     function handleMouseMove(e) {
       setCursorPosition({ top: e.pageY, left: e.pageX });
     }
+
     window.addEventListener("mousemove", handleMouseMove);
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
@@ -35,6 +37,7 @@ function App() {
         onMouseEnter={() => setIsHoveringWork(true)}
         onMouseLeave={() => setIsHoveringWork(false)}
       />
+      <Review onMouseEnter={() => cursorLocation()} />
     </>
   );
 }
