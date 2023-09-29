@@ -5,6 +5,7 @@ body {
 .cursor.scaling {
   transform: scale(5);
 }
+
 header {
   display: flex;
   position: fixed;

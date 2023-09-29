@@ -36,6 +36,10 @@ section {
 }
 .left_side h1 {
   font-size: 30rem;
+  transition: 0.3s ease-in-out;
+}
+.left_side h1:hover {
+  color: orangered;
 }
 .right_side {
   gap: 2rem;

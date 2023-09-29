@@ -5,6 +5,7 @@ import About from "./components/About";
 import Navigation from "./components/Navigation";
 import Work from "./components/Work";
 import Review from "./components/Review";
+import Footer from "./components/Footer";
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
@@ -37,7 +38,8 @@ function App() {
         onMouseEnter={() => setIsHoveringWork(true)}
         onMouseLeave={() => setIsHoveringWork(false)}
       />
-      <Review onMouseEnter={() => cursorLocation()} />
+      <Review />
+      <Footer setIsHoveringLink={setIsHoveringLink} />
     </>
   );
 }
