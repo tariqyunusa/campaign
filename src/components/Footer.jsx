@@ -4,13 +4,19 @@ import arrow from "../assets/arrow-right.png";
 import { RiTwitterXLine } from "react-icons/ri";
 import { BiLogoFacebook } from "react-icons/bi";
 import { AiOutlineInstagram, AiOutlineYoutube } from "react-icons/ai";
+import { useState } from "react";
 const Footer = ({ setIsHoveringLink }) => {
+  const [value, setValue] = useState("");
   const handleMouseEnter = () => {
     setIsHoveringLink(true);
   };
 
   const handleMouseLeave = () => {
     setIsHoveringLink(false);
+  };
+  const handleClick = () => {
+    setValue("");
+    alert("Thank You For Your Interest You Will Recieve A Mail.");
   };
   return (
     <>
@@ -24,13 +30,16 @@ const Footer = ({ setIsHoveringLink }) => {
             <br /> design and upcoming events
           </h3>
           <div className="input">
+            <form action="submit" typeof="submit"></form>
             <input
               type="email"
               name="email"
               id="mail"
               placeholder="Enter Your Email"
+              value={value}
+              onChange={(e) => setValue(e.target.value)}
             />
-            <button>
+            <button type="submit" onClick={handleClick}>
               <img src={arrow} alt="" />
             </button>
           </div>

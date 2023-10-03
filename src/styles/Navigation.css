@@ -19,6 +19,10 @@ header {
   background-color: transparent;
   mix-blend-mode: difference;
 }
+header:hover {
+  background-color: black;
+  mix-blend-mode: normal;
+}
 header a {
   margin: 0 1rem;
   text-decoration: none;
@@ -27,7 +31,7 @@ header a {
 }
 header a:hover {
   color: black;
-  z-index: 11;
+  z-index: 9999;
 }
 .reeach a:hover {
   z-index: 11;

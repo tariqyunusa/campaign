@@ -20,8 +20,10 @@ body {
   text-align: center;
   height: 10vh;
 }
-.main_text h1 {
+.main_text .landing_h1 {
   font-size: 4.5rem;
+  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  z-index: -1;
 }
 .video {
   width: 80%;
@@ -37,7 +39,9 @@ section {
   height: 90vh;
 }
 video {
+  margin-top: 2rem;
   width: 80%;
+  z-index: -1;
 }
 
 @media only screen and (max-width: 800px) {
@@ -65,7 +69,7 @@ video {
 }
 @media only screen and (max-width: 425px) {
   .main_text h1 {
-    font-size: 2rem;
+    font-size: 1.5rem;
   }
   .main_text {
     height: 50vh;

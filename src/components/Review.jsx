@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
 import Data from "../../Data";
 import "../styles/Review.css";
+import { useReducer } from "react";
+import { useRef } from "react";
+import gsap from "gsap";
 
 const Review = () => {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
