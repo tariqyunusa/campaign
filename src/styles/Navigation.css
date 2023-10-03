@@ -19,10 +19,7 @@ header {
   background-color: transparent;
   mix-blend-mode: difference;
 }
-header:hover {
-  background-color: black;
-  mix-blend-mode: normal;
-}
+
 header a {
   margin: 0 1rem;
   text-decoration: none;
