@@ -1,7 +1,7 @@
 import React, { useEffect, useRef } from "react";
 import "../styles/About.css";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 gsap.registerPlugin(ScrollTrigger);
 
 const About = () => {
@@ -14,24 +14,17 @@ const About = () => {
       .timeline({
         scrollTrigger: {
           trigger: aboutHeaderRef.current,
-          start: "top -300px", // Adjust this value as needed
+          start: "top center",
+          scrub: true,
         },
       })
       .to(aboutHeaderRef.current, {
-        delay: 0.5,
+        delay: 3.5,
         y: -20,
         clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
         duration: 3.5,
-      });
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: RightSideH3Ref.current,
-          start: "top -100px", // Adjust this value as needed
-        },
       })
       .to(RightSideH3Ref.current, {
-        delay: 0.5,
         y: -20,
         clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
         duration: 3.5,
