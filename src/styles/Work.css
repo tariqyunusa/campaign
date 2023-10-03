@@ -19,7 +19,7 @@
   padding-inline: 1rem;
   margin-bottom: 2rem;
 }
-.work-section h1 {
+.work-section .work-h1 {
   font-size: 5rem;
 }
 .wrap {
@@ -72,7 +72,7 @@
   background-size: cover;
 }
 @media only screen and (max-width: 767px) {
-  .work-section h1 {
+  .work-section .work-h1 {
     font-size: 1.5rem;
   }
   .wrap {

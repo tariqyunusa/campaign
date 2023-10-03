@@ -52,7 +52,7 @@ video {
     justify-content: center;
     align-items: center;
   }
-  .main_text h1 {
+  .main_text .landing_h1 {
     font-size: 3rem;
   }
   .video {

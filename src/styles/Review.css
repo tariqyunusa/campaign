@@ -30,7 +30,7 @@ body {
   display: flex;
   flex-direction: column;
 }
-.review h1 {
+.review .reviw_h1 {
   font-size: 3rem;
 }
 .navigation-buttons {
@@ -40,7 +40,7 @@ body {
   gap: 2rem;
 }
 @media only screen and (max-width: 767px) {
-  .reviews h1 {
+  .reviews .reviw_h1 {
     font-size: 1.5rem;
   }
   .navigation-buttons {

@@ -45,7 +45,7 @@
   clip-path: polygon(0 100%, 100% 100%, 100% 0, 0 0);
 }
 @media only screen and (max-width: 500px) {
-  .orange h1 {
+  .orange .loader_h1 {
     font-size: 3rem;
   }
 }

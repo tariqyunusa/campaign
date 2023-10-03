@@ -6,7 +6,7 @@ const Work = ({ onMouseEnter, onMouseLeave }) => {
     <>
       <section className="work">
         <div className="work-section">
-          <h1>AREAS WE SPECIALISE IN </h1>
+          <h1 className="work-h1">AREAS WE SPECIALISE IN </h1>
         </div>
         <div
           className="wrap"

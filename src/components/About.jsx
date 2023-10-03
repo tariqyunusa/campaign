@@ -22,9 +22,12 @@ const About = () => {
             <h1>*</h1>
           </div>
           <div className="right_side">
-            <h3 ref={RightSideH3Ref} className="right_h3">
-              AT CAMPAIGN OUR GOAL IS YOUR GOAL
-            </h3>
+            <div className="rhs-2">
+              <h3 ref={RightSideH3Ref} className="right_h3">
+                AT CAMPAIGN OUR GOAL IS YOUR GOAL
+              </h3>
+            </div>
+
             <p>
               we are a Nigerian Based Creative Agency whose niche is drawing
               inspiration from the great minds of history while applying that
