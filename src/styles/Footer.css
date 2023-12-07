@@ -49,6 +49,9 @@
 .input {
   display: flex;
 }
+.input:focus :active {
+  background-color: black;
+}
 .input button {
   background-color: transparent;
   border: none;
@@ -96,6 +99,27 @@ p span {
 }
 .footer_container__right h1:hover {
   color: orangered;
+}
+@media only screen and (max-width: 430px) {
+  .footer-container {
+    height: 70vh;
+  }
+  .heading h1 {
+    font-size: 4rem;
+  }
+  .footer_container__left {
+    padding: 1rem;
+  }
+  .heading {
+    margin: 0;
+  }
+  .footer_container__left h3 {
+    font-weight: 300;
+    font-size: 1rem;
+  }
+  .footer_container__left p {
+    font-size: 10px;
+  }
 }
 @media only screen and (max-width: 767px) {
   .footer_container__right {

@@ -20,7 +20,7 @@ const Footer = ({ setIsHoveringLink }) => {
   };
   return (
     <>
-      <div className="footer-container">
+      <footer className="footer-container">
         <div className="footer_container__left">
           <div className="heading">
             <h1>CAMPAIGN</h1>
@@ -83,7 +83,7 @@ const Footer = ({ setIsHoveringLink }) => {
         <div className="footer_container__right">
           <h1>*</h1>
         </div>
-      </div>
+      </footer>
     </>
   );
 };

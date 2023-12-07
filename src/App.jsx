@@ -44,12 +44,13 @@ function App() {
           ></div>
           <Navigation setIsHoveringLink={setIsHoveringLink} />
           <Landing setIsHoveringLink={setIsHoveringLink} />
-          <About />
+          <About setIsHoveringLink={setIsHoveringLink} />
           <Work
             onMouseEnter={() => setIsHoveringWork(true)}
             onMouseLeave={() => setIsHoveringWork(false)}
+            setIsHoveringLink={setIsHoveringLink}
           />
-          <Review />
+          <Review setIsHoveringLink={setIsHoveringLink} />
           <Footer setIsHoveringLink={setIsHoveringLink} />
         </div>
       )}

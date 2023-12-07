@@ -42,7 +42,7 @@ const About = () => {
 
   return (
     <>
-      <div className="about">
+      <section className="about">
         <div className="about_header">
           <h1 className="about_h1" ref={aboutHeaderRef}>
             INCORPORATE WISDOM AND BRILLIANCE OF THE PAST WITH FAST FORWARD
@@ -72,7 +72,7 @@ const About = () => {
             <a href="">See Our Work</a>
           </div>
         </section>
-      </div>
+      </section>
     </>
   );
 };

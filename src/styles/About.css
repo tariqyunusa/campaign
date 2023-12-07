@@ -4,13 +4,13 @@
   box-sizing: border-box;
 }
 .about {
-  width: 100%;
-  height: 100%;
+  width: 100vw;
+  height: 120vh;
   background-color: black;
   padding: 5rem;
   margin: 8rem 0 2rem 0;
   position: relative;
-
+  display: block;
   z-index: -1;
 }
 .about .about_header {
@@ -98,9 +98,9 @@ section {
     font-size: 1.2rem;
   }
 }
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 430px) {
   .about {
-    padding: 2rem;
+    padding: 1rem;
     top: 1.8rem;
   }
   .rhs-2 {
@@ -109,14 +109,12 @@ section {
 
   .about .about_header {
     width: 100%;
-    height: 0;
-    padding: 20px;
-    position: relative;
-    top: -8rem;
+    height: 10rem;
+    top: 0;
   }
 }
 @media only screen and (max-width: 1000px) {
-  .about {
+  /* .about {
     padding: 2rem;
-  }
+  } */
 }

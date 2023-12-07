@@ -39,11 +39,26 @@ body {
   display: flex;
   gap: 2rem;
 }
+@media only screen and (max-width: 430px) {
+  .reviews {
+    padding: 2rem;
+  }
+  .navigation-buttons {
+    margin-top: 0;
+  }
+  .header-review {
+    padding: 1rem;
+  }
+  .review {
+    margin: 0;
+    width: 90vw;
+  }
+}
 @media only screen and (max-width: 767px) {
   .reviews .reviw_h1 {
     font-size: 1.5rem;
   }
-  .navigation-buttons {
+  /* .navigation-buttons {
     margin-top: 4rem;
-  }
+  } */
 }
