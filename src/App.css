@@ -24,7 +24,7 @@ body {
   z-index: 1;
   /* mix-blend-mode: difference; */
 }
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 992px) {
   .cursor {
     display: none;
   }

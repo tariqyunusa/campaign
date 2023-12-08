@@ -132,3 +132,26 @@ p span {
     font-size: 3rem;
   }
 }
+@media only screen and (max-width: 992px) {
+  .footer-container {
+    width: 100vw;
+    height: 65vh;
+    gap: 0;
+  }
+  .footer_container__left {
+    width: 65%;
+  }
+  .heading {
+    margin: 0;
+  }
+  .heading h1 {
+    font-size: 5rem;
+  }
+  .footer_container__left h3 {
+    margin: 0;
+    font-size: 1rem;
+  }
+  .footer_container__right h1 {
+    font-size: 20rem;
+  }
+}

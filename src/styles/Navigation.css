@@ -83,7 +83,7 @@ button {
     gap: 1rem;
     background-color: black;
     transition: 1s;
-    transform: translate(-100vh);
+    transform: translate(-100vw);
   }
   ul {
     display: flex;

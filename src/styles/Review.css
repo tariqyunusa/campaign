@@ -62,3 +62,24 @@ body {
     margin-top: 4rem;
   } */
 }
+@media only screen and (max-width: 992px) {
+  .reviews {
+    padding: 2rem;
+  }
+  .header-review {
+    height: 15vh;
+  }
+  .review {
+    margin-top: 0;
+    height: 50vh;
+  }
+  .review .reviw_h1 {
+    font-size: 2rem;
+  }
+  .Review-container {
+    height: 85vh;
+  }
+  .navigation-buttons {
+    margin: 2rem 0;
+  }
+}

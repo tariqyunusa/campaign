@@ -20,10 +20,6 @@
   margin: 1rem 0 1rem 0;
 }
 
-.about_h1 {
-  font-size: 2.5rem;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-}
 section {
   display: flex;
   gap: 10%;
@@ -59,18 +55,22 @@ section {
   text-transform: uppercase;
   transition: 0.3s ease;
 }
-
-.right_h3 {
-  font-size: 1.8rem;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
-}
-.text_about {
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+@media only screen and (max-width: 992px) {
+  .about {
+    margin: 0;
+    padding: 2rem 0;
+  }
+  .about .about_header {
+    margin: 0;
+  }
+  .right_side {
+    padding: 1rem;
+  }
 }
 @media only screen and (max-width: 700px) {
   .about {
     top: 2rem;
-    margin: 0;
+    margin: 0 0 0 0;
     padding: 2rem;
   }
   .left_side {
@@ -89,7 +89,6 @@ section {
     height: 0;
     padding: 0;
     position: relative;
-    top: -7rem;
   }
   .about .about_header h1 {
     font-size: 1.5rem;

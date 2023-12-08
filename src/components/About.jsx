@@ -9,37 +9,6 @@ const About = () => {
   const RightSideH3Ref = useRef(null);
   const textRef = useRef(null);
 
-  useEffect(() => {
-    gsap
-      .timeline({
-        scrollTrigger: {
-          trigger: aboutHeaderRef.current,
-          start: "top center",
-          scrub: true,
-        },
-      })
-      .to(aboutHeaderRef.current, {
-        delay: 3.5,
-        y: -20,
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        duration: 3.5,
-      })
-      .to(RightSideH3Ref.current, {
-        y: -20,
-        clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-        duration: 3.5,
-      })
-      .to(
-        textRef.current,
-        {
-          y: -20,
-          clipPath: "polygon(0% 100%, 100% 100%, 100% 0%, 0% 0%)",
-          duration: 2.5,
-        },
-        "<"
-      );
-  }, []);
-
   return (
     <>
       <section className="about">
