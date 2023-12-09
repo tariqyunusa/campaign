@@ -15,12 +15,12 @@
 }
 .work-section {
   width: 80%;
-  height: 10vh;
+
   padding-inline: 1rem;
   margin-bottom: 2rem;
 }
 .work-section .work-h1 {
-  font-size: 5rem;
+  font-size: 3.5rem;
 }
 .wrap {
   margin-top: 1rem;
@@ -122,5 +122,10 @@
   .cover-wrapper:hover {
     height: 100%;
     opacity: 100%;
+  }
+}
+@media only screen and (min-width: 1024px) {
+  .work-section .work-h1 {
+    font-size: 3.5rem;
   }
 }

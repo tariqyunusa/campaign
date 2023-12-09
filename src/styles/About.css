@@ -112,8 +112,16 @@ section {
     top: 0;
   }
 }
-@media only screen and (max-width: 1000px) {
-  /* .about {
-    padding: 2rem;
-  } */
+@media only screen and (min-width: 1024px) {
+  .about .about_header h1 {
+    font-size: 2.5rem;
+  }
+  .about .about_header {
+    padding: 0;
+    margin-top: 2rem;
+    width: 80%;
+  }
+  .right_side {
+    font-size: 1.2rem;
+  }
 }
