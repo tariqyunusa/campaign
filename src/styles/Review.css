@@ -31,7 +31,7 @@ body {
   flex-direction: column;
 }
 .review .reviw_h1 {
-  font-size: 3rem;
+  font-size: 2rem;
 }
 .navigation-buttons {
   width: 100%;
@@ -39,6 +39,10 @@ body {
   display: flex;
   gap: 2rem;
 }
+.review h3 {
+  opacity: 80%;
+}
+
 @media only screen and (max-width: 430px) {
   .reviews {
     padding: 2rem;
@@ -46,6 +50,8 @@ body {
   }
   .navigation-buttons {
     margin-top: 0;
+    position: relative;
+    top: -13rem;
   }
   .header-review {
     padding: 1rem;
@@ -54,11 +60,18 @@ body {
     margin: 0;
     width: 90vw;
   }
-}
-@media only screen and (max-width: 767px) {
-  .reviews .reviw_h1 {
+  .review .reviw_h1 {
     font-size: 1.5rem;
   }
+  .review h3 {
+    font-size: 1rem;
+    opacity: 80%;
+  }
+}
+@media only screen and (max-width: 767px) {
+  /* .reviews .reviw_h1 {
+    font-size: 1.5rem;
+  } */
   /* .navigation-buttons {
     margin-top: 4rem;
   } */
@@ -72,15 +85,20 @@ body {
   }
   .review {
     margin-top: 0;
+    width: 85vw;
     height: 50vh;
   }
-  .review .reviw_h1 {
+  /* .review .reviw_h1 {
     font-size: 2rem;
-  }
+  } */
   .Review-container {
     height: 85vh;
   }
   .navigation-buttons {
     margin: 2rem 0;
+  }
+  .navigation-buttons {
+    position: relative;
+    top: -10rem;
   }
 }

@@ -32,11 +32,11 @@ const Review = () => {
             <h1 className="reviw_h1">"{Data[currentReviewIndex].quote}"</h1>
             <h3>{Data[currentReviewIndex].name}</h3>
             <h3>{Data[currentReviewIndex].org}</h3>
-            <div className="navigation-buttons">
-              <a onClick={prevReview}>Previous</a>
-              <a onClick={nextReview}>Next</a>
-            </div>
           </div>
+        </div>
+        <div className="navigation-buttons">
+          <a onClick={prevReview}>Previous</a>
+          <a onClick={nextReview}>Next</a>
         </div>
       </div>
     </>
