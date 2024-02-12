@@ -50,7 +50,7 @@ function App() {
             onMouseLeave={() => setIsHoveringWork(false)}
             setIsHoveringLink={setIsHoveringLink}
           />
-          <Review setIsHoveringLink={setIsHoveringLink} />
+          <Review  cursorPosition={cursorPosition} />
           <Footer setIsHoveringLink={setIsHoveringLink} />
         </div>
       )}

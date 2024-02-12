@@ -19,6 +19,7 @@ body {
 }
 .reviews {
   height: 70vh;
+  width: 100%;
   display: flex;
   gap: 5rem;
   padding: 5rem;
