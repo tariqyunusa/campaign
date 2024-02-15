@@ -39,6 +39,7 @@ body {
   justify-content: center;
   display: flex;
   gap: 2rem;
+  display: none;
 }
 .review h3 {
   opacity: 80%;
@@ -67,6 +68,7 @@ body {
     margin-top: 0;
     position: relative;
     top: -13rem;
+    display: block;
   }
   .header-review {
     padding: 1rem;
@@ -90,6 +92,9 @@ body {
   /* .navigation-buttons {
     margin-top: 4rem;
   } */
+  .navigation-buttons{
+    display: block;
+  }
 }
 @media only screen and (max-width: 992px) {
   .reviews {
@@ -115,5 +120,6 @@ body {
   .navigation-buttons {
     position: relative;
     top: -10rem;
+    display: block;
   }
 }
