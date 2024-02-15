@@ -5,18 +5,35 @@ import { useReducer } from "react";
 import { useRef } from "react";
 import gsap from "gsap";
 
-const Review = ({cursorPosition, setIsHoveringReview}) => {
+const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) => {
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
   const reviewRef = useRef(null)
   const review = reviewRef.current
   
+  
   const hoverReviewEnter= () => {
-    setIsHoveringReview(true)
+    const reviewContainer = reviewRef.current;
+    if (cursorPosition.left <  reviewContainer.offsetWidth/2){
+      setIsHoveringReviewLeft(true)
+      setIsHoveringReview(false)
+    }else{
+      setIsHoveringReview(true)
+      setIsHoveringReviewLeft(false)
+    }
+    
+   
+   console.log("hey there");
+    
     
   }
   const hoverReviewLeave = () => {
-    setIsHoveringReview(false)
+      setIsHoveringReviewLeft(false)
+      setIsHoveringReview(false)
+    
+   
   }
+  
+  
   const nextReview = () => {
     setCurrentReviewIndex((prevIndex) =>
       prevIndex === Data.length - 1 ? 0 : prevIndex + 1
@@ -29,23 +46,21 @@ const Review = ({cursorPosition, setIsHoveringReview}) => {
     );
   };
   const reviewAnim = () => {
+    
     const reviewContainer = reviewRef.current;
-    const containerWidth = reviewContainer.offsetWidth;
-    const containerLeft = reviewContainer.offsetLeft;
 
-    if (cursorPosition.x <  reviewContainer.offsetWidth) {
+    if (cursorPosition.left <  reviewContainer.offsetWidth/2) {
       console.log("hello");
       setCurrentReviewIndex((prevIndex) =>
       prevIndex === 0 ? Data.length - 1 : prevIndex - 1
-    );
-    }
-    else{
+    )}
+     else if(cursorPosition.left >  reviewContainer.offsetWidth/2){
       console.log("hi");
-      setCurrentReviewIndex((prevIndex) =>
-      prevIndex === Data.length - 1 ? 0 : prevIndex + 1
-    );
-    }
-   console.log(cursorPosition.x);
+      setCurrentReviewIndex((nextIndex) =>
+      nextIndex === Data.length - 1 ? 0 : nextIndex + 1
+    )}
+   console.log(cursorPosition);
+   console.log(currentReviewIndex);
   };
 
   
@@ -58,7 +73,7 @@ const Review = ({cursorPosition, setIsHoveringReview}) => {
           <h2>REVIEWS</h2>
           <h2>{currentReviewIndex + 1} - 8</h2>
         </div>
-        <div className="reviews" ref={reviewRef} onMouseEnter={hoverReviewEnter} onMouseLeave={hoverReviewLeave} onClick={reviewAnim}>
+        <div className="reviews" ref={reviewRef} onMouseEnter={hoverReviewEnter } onMouseLeave={hoverReviewLeave} onClick={reviewAnim} >
           <div className="review"  onClick={reviewAnim} >
             <h1 className="reviw_h1">"{Data[currentReviewIndex].quote}"</h1>
             <h3>{Data[currentReviewIndex].name}</h3>

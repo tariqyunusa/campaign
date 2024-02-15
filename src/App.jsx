@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Landing from "./components/Landing";
 import "./App.css";
 import { FaArrowRight } from "react-icons/fa";
+import { FaArrowLeft } from "react-icons/fa";
 import About from "./components/About";
 import Navigation from "./components/Navigation";
 import Work from "./components/Work";
@@ -17,6 +18,7 @@ function App() {
   const [ishoveringLink, setIsHoveringLink] = useState(false);
   const [isHoveringWork, setIsHoveringWork] = useState(false);
   const [isHoveringReview, setIsHoveringReview] = useState(false)
+  const [isHoveringReviewLeft, setIsHoveringReviewLeft] = useState(false)
   const [reviewCursor, setReviewCursor] = useState({ x: 0, y: 0 });
   const [isLoading, setIsLoading] = useState(true);
 
@@ -44,12 +46,16 @@ function App() {
           <div
             className={`cursor ${ishoveringLink ? "scaling" : ""} ${
               isHoveringWork ? "black-cursor" : ""
-            } ${isHoveringReview ? "hovering_review" : ""}`}
+            } ${isHoveringReview ? "hovering_review" : ""} ${isHoveringReviewLeft ? "hovering_left" : ""}`}
             style={{ top: cursorPosition.top, left: cursorPosition.left }}
           >
-            {isHoveringReview && (
+            {isHoveringReview ? (
               <div className="right">
               <FaArrowRight />
+              </div>
+            ): (
+              <div className="left">
+              <FaArrowLeft />
               </div>
             )}
           </div>
@@ -61,7 +67,7 @@ function App() {
             onMouseLeave={() => setIsHoveringWork(false)}
             setIsHoveringLink={setIsHoveringLink}
           />
-          <Review  setCursorPosition={setCursorPosition}  setIsHoveringReview={setIsHoveringReview} />
+          <Review  cursorPosition={cursorPosition}  setIsHoveringReview={setIsHoveringReview} setIsHoveringReviewLeft={setIsHoveringReviewLeft}/>
           <Footer setIsHoveringLink={setIsHoveringLink} />
         </div>
       )}

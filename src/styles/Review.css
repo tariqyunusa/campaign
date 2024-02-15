@@ -50,7 +50,13 @@ body {
   color: black;
   font-size: 1rem;
 }
-
+.hovering_left{
+  width: 100px;
+  height: 100px;
+  
+  color: black;
+  font-size: 1rem;
+}
 
 @media only screen and (max-width: 430px) {
   .reviews {
