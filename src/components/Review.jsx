@@ -19,12 +19,7 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
     }else{
       setIsHoveringReview(true)
       setIsHoveringReviewLeft(false)
-    }
-    
-   
-   console.log("hey there");
-    
-    
+    }  
   }
   const hoverReviewLeave = () => {
       setIsHoveringReviewLeft(false)
@@ -50,12 +45,12 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
     const reviewContainer = reviewRef.current;
 
     if (cursorPosition.left <  reviewContainer.offsetWidth/2) {
-      console.log("hello");
+      console.log("previous comment");
       setCurrentReviewIndex((prevIndex) =>
       prevIndex === 0 ? Data.length - 1 : prevIndex - 1
     )}
      else if(cursorPosition.left >  reviewContainer.offsetWidth/2){
-      console.log("hi");
+      console.log("next comment");
       setCurrentReviewIndex((nextIndex) =>
       nextIndex === Data.length - 1 ? 0 : nextIndex + 1
     )}
@@ -74,7 +69,7 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
           <h2>{currentReviewIndex + 1} - 8</h2>
         </div>
         <div className="reviews" ref={reviewRef} onMouseEnter={hoverReviewEnter } onMouseLeave={hoverReviewLeave} onClick={reviewAnim} >
-          <div className="review"  onClick={reviewAnim} >
+          <div className="review"   >
             <h1 className="reviw_h1">"{Data[currentReviewIndex].quote}"</h1>
             <h3>{Data[currentReviewIndex].name}</h3>
             <h3>{Data[currentReviewIndex].org}</h3>
