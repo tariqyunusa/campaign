@@ -8,8 +8,8 @@ body {
 }
 .landing {
   margin-top: 7rem;
-  width: 100%;
-  height: 90vh;
+  width: 100vw;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   place-items: center;
@@ -22,7 +22,7 @@ body {
 }
 .main_text .landing_h1 {
   font-size: 4.5rem;
-  clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%);
+  /* clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0 100%); */
   z-index: -1;
 }
 /* .video {
@@ -43,7 +43,11 @@ section {
   width: 80%;
   z-index: -1;
 } */
-
+video{
+  position: relative;
+  object-fit: cover;
+  z-index: -1;
+}
 @media only screen and (min-width: 800px) {
   .main_text {
     width: 90%;
@@ -126,12 +130,15 @@ section {
     margin: 1rem;
   }
   .video {
-    width: 75%;
-    height: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    height: 100%;
   }
   video {
     margin-top: 1rem;
-    width: 100%;
+    width: 60%;
+    height: 100%;
     border-radius: 7px;
     margin: 0;
   }

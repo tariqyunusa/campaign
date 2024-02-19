@@ -7,7 +7,7 @@
   width: 100vw;
   height: 120vh;
   background-color: black;
-  padding: 5rem;
+  padding: 2rem;
   margin: 8rem 0 2rem 0;
   position: relative;
   display: block;
@@ -17,7 +17,11 @@
   width: 65%;
   padding: 2rem;
   text-align: start;
+  /* position: relative; */
   margin: 1rem 0 1rem 0;
+}
+.about_h1{
+  clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
 }
 
 section {
@@ -118,7 +122,7 @@ section {
   }
   .about .about_header {
     padding: 0;
-    margin-top: 2rem;
+    /* margin-top: 2rem; */
     width: 80%;
   }
   .right_side {

@@ -1,19 +1,33 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useLayoutEffect, useRef } from "react";
 import "../styles/About.css";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger);
+
 
 const About = () => {
+  const aboutRef = useRef(null)
   const aboutHeaderRef = useRef(null);
   const RightSideH3Ref = useRef(null);
   const textRef = useRef(null);
+  useEffect(() => {
+    gsap.registerPlugin(ScrollTrigger);
+    const timeline = gsap.timeline({})
+    timeline.to(aboutHeaderRef.current, {scrollTrigger:{
+      trigger: aboutRef.current,
+      start: "top-=100 top",
+      end : "10 10",
+      markers: true,
+      // scrub: true,
+      ease: "power2.inOut",
+    },y: -20, duration: 1})
+    
+  },[])
 
   return (
     <>
-      <section className="about">
-        <div className="about_header">
-          <h1 className="about_h1" ref={aboutHeaderRef}>
+      <section className="about" ref={aboutRef}>
+        <div className="about_header"  ref={aboutHeaderRef}>
+          <h1 className="about_h1">
             INCORPORATE WISDOM AND BRILLIANCE OF THE PAST WITH FAST FORWARD
             THINKING AND AN INNOVATIVE VISION FOR THE FUTURE
           </h1>

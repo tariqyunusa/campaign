@@ -9,9 +9,7 @@ import Work from "./components/Work";
 import Review from "./components/Review";
 import Footer from "./components/Footer";
 import Loader from "./components/Loader";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
-gsap.registerPlugin(ScrollTrigger)
+
 
 function App() {
   const [cursorPosition, setCursorPosition] = useState({ top: 0, left: 0 });
