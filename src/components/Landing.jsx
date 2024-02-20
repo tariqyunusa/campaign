@@ -38,7 +38,7 @@ const landing = ({ setIsHoveringLink }) => {
         scrub: true,
         end: "bottom bottom",
         ease: "power2.inOut",
-      },width: '100vw',  })
+      },width: '100vw', duration: 2  })
    
   }, []);
 

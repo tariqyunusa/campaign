@@ -18,6 +18,7 @@ header {
   padding: 0 2rem;
   background-color: transparent;
   mix-blend-mode: difference;
+  z-index: 9999;
 }
 
 header a {

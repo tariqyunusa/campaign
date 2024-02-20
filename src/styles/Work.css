@@ -5,7 +5,8 @@
 }
 .black-cursor {
   background: black;
-  transform: scale(8);
+  width: 100px;
+  height: 100px;
 }
 .work {
   width: 100%;
@@ -20,6 +21,9 @@
   margin-bottom: 2rem;
 }
 .work-section .work-h1 {
+  position: relative;
+  top: 100px;
+  opacity: 0;
   font-size: 3.5rem;
 }
 .wrap {
@@ -38,36 +42,51 @@
   justify-content: center;
   transition: 0.5s all ease-in-out;
   opacity: 100%;
+  /* z-index: 9999; */
+  position: absolute;
+  
 }
 .cover-wrapper:hover {
   height: 0;
   opacity: 0;
 }
-.main-content {
-  width: 25%;
+img{
+  width: 100%;
   height: 100%;
-  background-image: url(../assets/Development.jpg);
   background-position: 100% 100%;
   background-size: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
-.main-content:nth-child(2) {
+.main-content {
+  position: relative;
   width: 25%;
   height: 100%;
-  background-image: url(../assets/Design.jpg);
+  /* background-image: url(../assets/Development.jpg); */
+  
+}
+.main-content:nth-child(2) {
+  position: relative;
+  width: 25%;
+  height: 100%;
+  /* background-image: url(../assets/Design.jpg); */
   background-position: 100% 100%;
   background-size: cover;
 }
 .main-content:nth-child(3) {
+  position: relative;
   width: 25%;
   height: 100%;
-  background-image: url(../assets/Branding.jpg);
-  background-position: 100% 100%;
-  background-size: cover;
+  /* background-image: url(../assets/Branding.jpg); */
+  /* background-position: 100% 100%;
+  background-size: cover; */
 }
 .main-content:nth-child(4) {
+  position: relative;
   width: 25%;
   height: 100%;
-  background-image: url(../assets/Cinematography.jpg);
+  /* background-image: url(../assets/Cinematography.jpg); */
   background-position: 100% 100%;
   background-size: cover;
 }

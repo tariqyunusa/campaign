@@ -9,32 +9,93 @@ const About = () => {
   const aboutHeaderRef = useRef(null);
   const RightSideH3Ref = useRef(null);
   const textRef = useRef(null);
+  const starRef = useRef(null)
+  const linksRef = useRef([])
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const timeline = gsap.timeline({})
-    timeline.to(aboutHeaderRef.current, {scrollTrigger:{
-      trigger: aboutRef.current,
-      start: "top-=100 top",
-      end : "10 10",
-      markers: true,
-      // scrub: true,
-      ease: "power2.inOut",
-    },y: -20, duration: 1})
+
+    // header animation
     
+    timeline.to(aboutHeaderRef.current, {scrollTrigger:{
+      trigger: aboutHeaderRef.current,
+      start: "top-=100 top+=200",
+      end : "top+=20 top+=220",
+      scrub: true,
+      // markers: true,
+      ease: "power2.inOut",
+    },y: -100, duration: .5, opacity: 1,})
+
+    // rightSide Animation
+
+    .to(starRef.current, {
+      scrollTrigger: {
+        trigger: starRef.current,
+        start: "top-=150 top+=100",
+       scrub: true,
+      //  markers: true,
+       end: "top+=100 top+=200"
+      },
+      x: 100, opacity: 1, duration: .5
+    })
+
+    // leftside header animation
+
+    .to(RightSideH3Ref.current, {
+      scrollTrigger: {
+        trigger: RightSideH3Ref.current,
+        start: "top-=150 top+=200",
+        end: "bottom-=100 top+=200",
+        // markers: true,
+        ease: "power2.inOut",
+        scrub: true
+
+      },
+      y: -100 , opacity: 1, duration: .5
+    })
+
+    // text animation
+
+    .to(textRef.current, {
+      scrollTrigger: {
+        trigger: RightSideH3Ref.current,
+        start: "top top+=300",
+        end: "top+=100 top+=320",
+        // markers: true,
+        scrub: true
+
+      },
+      y: -100 , opacity: 1, duration: .5, delay: 1
+    })
+
+    // links animation
+
+    // .to(linksRef.current, {
+    //   scrollTrigger: {
+    //     trigger: linksRef.current,
+    //     start: "top top+=300",
+    //     end: "top+=100 top+=320",
+    //     markers: true,
+    //     scrub: true
+
+    //   },
+    //   y: -100 , opacity: 1, duration: .5, delay: 1
+    // })
   },[])
+ 
 
   return (
     <>
       <section className="about" ref={aboutRef}>
-        <div className="about_header"  ref={aboutHeaderRef}>
-          <h1 className="about_h1">
+        <div className="about_header"  >
+          <h1 className="about_h1" ref={aboutHeaderRef}>
             INCORPORATE WISDOM AND BRILLIANCE OF THE PAST WITH FAST FORWARD
             THINKING AND AN INNOVATIVE VISION FOR THE FUTURE
           </h1>
         </div>
         <section>
           <div className="left_side">
-            <h1>*</h1>
+            <h1 ref={starRef}>*</h1>
           </div>
           <div className="right_side">
             <div className="rhs-2">
@@ -51,8 +112,8 @@ const About = () => {
               dynamic approach to creativity and design, making your agency
               stand out as a bridge between tradition and innovation.
             </p>
-            <a href="">Reach Out</a>
-            <a href="">See Our Work</a>
+            <a href="" ref={linksRef}>Reach Out</a>
+            <a href="" ref={linksRef}>See Our Work</a>
           </div>
         </section>
       </section>
