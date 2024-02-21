@@ -33,6 +33,19 @@ body {
 }
 .review .reviw_h1 {
   font-size: 2rem;
+  position: relative;
+  top: 100px;
+  opacity: 0;
+}
+.review_header{
+  position: relative;
+  top: 100px;
+  opacity: 0;
+}
+.review_index{
+  position: relative;
+  top: 100px;
+  opacity: 0;
 }
 .navigation-buttons {
   width: 100%;

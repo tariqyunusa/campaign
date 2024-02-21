@@ -9,7 +9,12 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
   const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
   const reviewRef = useRef(null)
   const review = reviewRef.current
-  
+  const reviewQuoteRef = useRef(null)
+  const reviewNameRef = useRef(null)
+  const reviewOrgRef = useRef(null)
+  const ReviewHeaderRef = useRef(null)
+  const ReviewIndexRef = useRef(null)
+  const ReviewSectionRef = useRef(null)
   
   const hoverReviewEnter= () => {
     const reviewContainer = reviewRef.current;
@@ -41,7 +46,7 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
     );
   };
   const reviewAnim = () => {
-    
+    const tl = gsap.timeline({ });
     const reviewContainer = reviewRef.current;
 
     if (cursorPosition.left <  reviewContainer.offsetWidth/2) {
@@ -53,26 +58,67 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
       console.log("next comment");
       setCurrentReviewIndex((nextIndex) =>
       nextIndex === Data.length - 1 ? 0 : nextIndex + 1
-    )}
-   console.log(cursorPosition);
-   console.log(currentReviewIndex);
+    )
+    tl.to(reviewQuoteRef.current,{scrollTrigger: {
+      trigger: ReviewHeaderRef.current,
+      start: "top-=200 top+=100",
+      end: "top-=150 top+=50",
+      markers: true,
+      scrub: true
+    },
+     y: -100, opacity: 1
+    })}
+  //  console.log(cursorPosition);
+  //  console.log(currentReviewIndex);
   };
+// review animation
 
+
+  useEffect(() => {
+    const tl = gsap.timeline({ })
+
+    // header and index animation 
+
+    tl.to(ReviewHeaderRef.current, {scrollTrigger: {
+      trigger: ReviewSectionRef.current,
+      start: "top-=200 top+=100",
+      end: "top-=100 top+=50",
+      // markers: true,
+      scrub: true
+    },
+      y: -100, opacity: 1
+    })
+    .to(ReviewIndexRef.current,{
+      y: -100, opacity: 1
+    })
+
+    // quote animation
+
+    tl.to(reviewQuoteRef.current,{scrollTrigger: {
+      trigger: ReviewHeaderRef.current,
+      start: "top-=200 top+=100",
+      end: "top-=150 top+=50",
+      markers: true,
+      scrub: true
+    },
+     y: -100, opacity: 1
+    })
+  },[])
   
   // console.log(review);
   // console.log(cursorPosition);
   return (
     <>
-      <div className="Review-container">
+      <div className="Review-container" ref={ReviewSectionRef}>
         <div className="header-review" >
-          <h2>REVIEWS</h2>
-          <h2>{currentReviewIndex + 1} - 8</h2>
+          <h2 ref={ReviewHeaderRef} className="review_header">REVIEWS</h2>
+          <h2 ref={ReviewIndexRef} className="review_index">{currentReviewIndex + 1} - 8</h2>
         </div>
         <div className="reviews" ref={reviewRef} onMouseEnter={hoverReviewEnter } onMouseLeave={hoverReviewLeave} onClick={reviewAnim} >
           <div className="review"   >
-            <h1 className="reviw_h1">"{Data[currentReviewIndex].quote}"</h1>
-            <h3>{Data[currentReviewIndex].name}</h3>
-            <h3>{Data[currentReviewIndex].org}</h3>
+            <h1 className="reviw_h1" ref={reviewQuoteRef}>"{Data[currentReviewIndex].quote}"</h1>
+            <h3 ref={reviewNameRef}>{Data[currentReviewIndex].name}</h3>
+            <h3 ref={reviewOrgRef}>{Data[currentReviewIndex].org}</h3>
           </div>
         </div>
         <div className="navigation-buttons">

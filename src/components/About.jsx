@@ -88,7 +88,7 @@ const About = () => {
   if(el && !linksRef.current.includes(el)){
     linksRef.current.push(el)
   }
-  console.log(linksRef.current);
+  // console.log(linksRef.current);
 }
 
   return (
