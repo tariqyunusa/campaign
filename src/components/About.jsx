@@ -10,7 +10,9 @@ const About = () => {
   const RightSideH3Ref = useRef(null);
   const textRef = useRef(null);
   const starRef = useRef(null)
-  const linksRef = useRef([])
+  const linksRef = useRef(null)
+  linksRef.current = []
+
   useEffect(() => {
     gsap.registerPlugin(ScrollTrigger);
     const timeline = gsap.timeline({})
@@ -70,19 +72,24 @@ const About = () => {
 
     // links animation
 
-    // .to(linksRef.current, {
-    //   scrollTrigger: {
-    //     trigger: linksRef.current,
-    //     start: "top top+=300",
-    //     end: "top+=100 top+=320",
-    //     markers: true,
-    //     scrub: true
+    .to(linksRef.current, {
+      scrollTrigger: {
+        trigger: linksRef.current,
+        start: "top-=100 top+=300",
+        end: "top-=200 top+=220",
+        // markers: true,
+        scrub: true
 
-    //   },
-    //   y: -100 , opacity: 1, duration: .5, delay: 1
-    // })
+      },
+      y: -100 , opacity: 1, duration: .5, stagger: 1
+    })
   },[])
- 
+ const linkedToRef = (el) => {
+  if(el && !linksRef.current.includes(el)){
+    linksRef.current.push(el)
+  }
+  console.log(linksRef.current);
+}
 
   return (
     <>
@@ -112,8 +119,8 @@ const About = () => {
               dynamic approach to creativity and design, making your agency
               stand out as a bridge between tradition and innovation.
             </p>
-            <a href="" ref={linksRef}>Reach Out</a>
-            <a href="" ref={linksRef}>See Our Work</a>
+            <a href="" ref={linkedToRef} className="links_about">Reach Out</a>
+            <a href="" ref={linkedToRef} className="links_about">See Our Work</a>
           </div>
         </section>
       </section>

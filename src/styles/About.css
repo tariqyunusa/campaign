@@ -73,6 +73,11 @@ section {
   text-transform: uppercase;
   transition: 0.3s ease;
 }
+.links_about{
+  position: relative;
+  top: 100px;
+  opacity: 0;
+}
 .text_about{
   position: relative;
   top: 100px;

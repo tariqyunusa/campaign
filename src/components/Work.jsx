@@ -10,6 +10,10 @@ gsap.registerPlugin(ScrollTrigger);
 
 const Work = ({ onMouseEnter, onMouseLeave }) => {
   const H1Ref = useRef(null)
+  const imageRefs = useRef([])
+  imageRefs.current = []
+  
+
   useEffect(() => {
     gsap.to(H1Ref.current, {
       scrollTrigger: {
@@ -21,7 +25,26 @@ const Work = ({ onMouseEnter, onMouseLeave }) => {
       },
       y: -100, opacity: 1, 
     })
+    
   },[])
+const addToRef = (el) => {
+  if(el && !imageRefs.current.includes(el)){
+    imageRefs.current.push(el)
+  }
+  // console.log(imageRefs.current);
+}
+
+// const scaleAnim = () => {
+ 
+//   imageRefs.current.forEach((img) => {
+//     gsap.to(img, {
+//       scale: 1
+//     })
+//   })
+ 
+// }
+
+
   return (
     <>
       <section className="work">
@@ -34,25 +57,25 @@ const Work = ({ onMouseEnter, onMouseLeave }) => {
           onMouseLeave={onMouseLeave}
         >
           <div className="main-content">
-            <img src={Dev} alt="development" srcset="" />
+            <img src={Dev} alt="development"  srcset="" ref={addToRef} />
             <div className="cover-wrapper">
               <h4>Development</h4>
             </div>
           </div>
           <div className="main-content">
-          <img src={Design} alt="development" srcset="" />
+          <img src={Design} alt="design" srcset="" ref={addToRef} />
             <div className="cover-wrapper">
               <h4>Design</h4>
             </div>
           </div>
           <div className="main-content">
-          <img src={Brand} alt="development" srcset="" />
+          <img src={Brand} alt="branding" srcset="" ref={addToRef} />
             <div className="cover-wrapper">
               <h4>Branding</h4>
             </div>
           </div>
           <div className="main-content">
-          <img src={Cine} alt="development" srcset="" />
+          <img src={Cine} alt="cinematography" srcset="" ref={addToRef} />
             <div className="cover-wrapper">
               <h4>Cinematography</h4>
             </div>
