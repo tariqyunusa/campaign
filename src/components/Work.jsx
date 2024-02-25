@@ -57,25 +57,25 @@ const addToRef = (el) => {
           onMouseLeave={onMouseLeave}
         >
           <div className="main-content">
-            <img src={Dev} alt="development"  srcset="" ref={addToRef} />
+            {/* <img src={Dev} alt="development"  srcset="" ref={addToRef} /> */}
             <div className="cover-wrapper">
               <h4>Development</h4>
             </div>
           </div>
           <div className="main-content">
-          <img src={Design} alt="design" srcset="" ref={addToRef} />
+          {/* <img src={Design} alt="design" srcset="" ref={addToRef} /> */}
             <div className="cover-wrapper">
               <h4>Design</h4>
             </div>
           </div>
           <div className="main-content">
-          <img src={Brand} alt="branding" srcset="" ref={addToRef} />
+          {/* <img src={Brand} alt="branding" srcset="" ref={addToRef} /> */}
             <div className="cover-wrapper">
               <h4>Branding</h4>
             </div>
           </div>
           <div className="main-content">
-          <img src={Cine} alt="cinematography" srcset="" ref={addToRef} />
+          {/* <img src={Cine} alt="cinematography" srcset="" ref={addToRef} /> */}
             <div className="cover-wrapper">
               <h4>Cinematography</h4>
             </div>

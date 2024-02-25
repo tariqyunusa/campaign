@@ -63,7 +63,7 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
       trigger: ReviewHeaderRef.current,
       start: "top-=200 top+=100",
       end: "top-=150 top+=50",
-      markers: true,
+      // markers: true,
       scrub: true
     },
      y: -100, opacity: 1
@@ -75,17 +75,17 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
 
 
   useEffect(() => {
-    const tl = gsap.timeline({ })
-
-    // header and index animation 
-
-    tl.to(ReviewHeaderRef.current, {scrollTrigger: {
+    const tl = gsap.timeline({ scrollTrigger: {
       trigger: ReviewSectionRef.current,
       start: "top-=200 top+=100",
       end: "top-=100 top+=50",
       // markers: true,
       scrub: true
-    },
+    },})
+
+    // header and index animation 
+
+    tl.to(ReviewHeaderRef.current, {
       y: -100, opacity: 1
     })
     .to(ReviewIndexRef.current,{
@@ -94,15 +94,21 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
 
     // quote animation
 
-    tl.to(reviewQuoteRef.current,{scrollTrigger: {
-      trigger: ReviewHeaderRef.current,
-      start: "top-=200 top+=100",
-      end: "top-=150 top+=50",
-      markers: true,
-      scrub: true
-    },
+    tl.to(reviewQuoteRef.current,{
      y: -100, opacity: 1
     })
+    // name animation
+
+    tl.to(reviewNameRef.current,{
+     y: -100, opacity: 1
+    })
+
+    // org animation
+
+    tl.to(reviewOrgRef.current,{
+      y: -100, opacity: 1
+     })
+
   },[])
   
   // console.log(review);
@@ -117,8 +123,8 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
         <div className="reviews" ref={reviewRef} onMouseEnter={hoverReviewEnter } onMouseLeave={hoverReviewLeave} onClick={reviewAnim} >
           <div className="review"   >
             <h1 className="reviw_h1" ref={reviewQuoteRef}>"{Data[currentReviewIndex].quote}"</h1>
-            <h3 ref={reviewNameRef}>{Data[currentReviewIndex].name}</h3>
-            <h3 ref={reviewOrgRef}>{Data[currentReviewIndex].org}</h3>
+            <h3 ref={reviewNameRef} className="review_name__h3">{Data[currentReviewIndex].name}</h3>
+            <h3 ref={reviewOrgRef} className="review_quote__h3">{Data[currentReviewIndex].org}</h3>
           </div>
         </div>
         <div className="navigation-buttons">

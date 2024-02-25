@@ -24,7 +24,7 @@ body {
   display: grid;
   place-items: center;
   z-index: 1;
-  /* mix-blend-mode: difference; */
+  mix-blend-mode: difference;
 }
 .right{
   width: 100%;
