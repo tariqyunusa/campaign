@@ -133,13 +133,13 @@ body {
   .review {
     margin-top: 0;
     width: 85vw;
-    height: 50vh;
+    /* height: 50vh; */
   }
   .review .reviw_h1 {
-    font-size: 2rem;
+    font-size: 1rem;
   }
   .review h3{
-    font-size: 1.5rem;
+    font-size: 1rem;
   }
   .Review-container {
     height: 85vh;
