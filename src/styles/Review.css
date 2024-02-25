@@ -150,6 +150,6 @@ body {
   .navigation-buttons {
     position: relative;
     top: -10rem;
-    display: flex;
+    display: none;
   }
 }

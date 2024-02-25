@@ -127,10 +127,10 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
             <h3 ref={reviewOrgRef} className="review_quote__h3">{Data[currentReviewIndex].org}</h3>
           </div>
         </div>
-        <div className="navigation-buttons">
+        {/* <div className="navigation-buttons">
           <a onClick={prevReview}>Previous</a>
           <a onClick={nextReview}>Next</a>
-        </div>
+        </div> */}
       </div>
     </>
   );
