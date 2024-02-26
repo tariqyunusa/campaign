@@ -31,14 +31,14 @@ const landing = ({ setIsHoveringLink }) => {
     end: "bottom bottom",
     ease: "power2.inOut",
   },scale: 1,  }, )
-      // .to(videoRef.current, { scrollTrigger: {
-      //   trigger: videoRef.current,
-      //   // markers: true,
-      //   start: "top top",
-      //   scrub: true,
-      //   end: "bottom bottom",
-      //   ease: "power2.inOut",
-      // },width: '100vw', duration: 2  })
+      .to(videoRef.current, { scrollTrigger: {
+        trigger: videoRef.current,
+        // markers: true,
+        start: "top top",
+        scrub: true,
+        end: "bottom bottom",
+        ease: "power2.inOut",
+      },width: '100vw', duration: 2  })
    
   }, []);
 
