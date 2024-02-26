@@ -1,14 +1,14 @@
-import React, { useEffect, useRef, useLayoutEffect } from "react";
-import video from "../assets/video.mp4";
+import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
+import video from "../assets/output.mp4";
 import "../styles/landing.css";
 import  gsap  from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger"
-import { Power4 } from "gsap";
 gsap.registerPlugin(ScrollTrigger)
 
 
 
 const landing = ({ setIsHoveringLink }) => {
+  const [videoDownloaded, setIsVideoDownloaded] = useState(false)
   const handleMouseEnter = () => {
     setIsHoveringLink(true);
   };
@@ -19,6 +19,9 @@ const landing = ({ setIsHoveringLink }) => {
   const landingRef = useRef(null);
   const videoRef = useRef(null);
   useLayoutEffect(() => {
+    if(!videoDownloaded) {
+      return;
+    }
     let tl = gsap.timeline({
      
     });
@@ -30,15 +33,8 @@ const landing = ({ setIsHoveringLink }) => {
     scrub: true,
     end: "bottom bottom",
     ease: "power2.inOut",
-  },scale: 1,  }, )
-      .to(videoRef.current, { scrollTrigger: {
-        trigger: videoRef.current,
-        // markers: true,
-        start: "top top",
-        scrub: true,
-        end: "bottom bottom",
-        ease: "power2.inOut",
-      },width: '100vw', duration: 2  })
+  },scale: 1})
+    
    
   }, []);
 
