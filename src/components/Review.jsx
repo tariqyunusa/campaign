@@ -72,16 +72,13 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
   //  console.log(currentReviewIndex);
   };
   useEffect(()=>{
-    setInterval(() => {
-      const nextReview = () => {
-        setCurrentReviewIndex((prevIndex) =>
-          prevIndex === Data.length - 1 ? 0 : prevIndex + 1
-        );
-        nextReview()
-        console.log("nexxxttttt");
-      }  
-  }, 3000)
-   },[])
+    const carousel = setInterval(() => {
+      setCurrentReviewIndex((next) => 
+        next === Data.length - 1 ? 0 : next + 1
+      )
+    },5000)
+    return () => clearInterval(carousel)
+   },[Data])
   
 
 // review animation
@@ -123,6 +120,7 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
      })
 
   },[])
+
   
   // console.log(review);
   // console.log(cursorPosition);
@@ -133,7 +131,7 @@ const Review = ({cursorPosition, setIsHoveringReview, setIsHoveringReviewLeft}) 
           <h2 ref={ReviewHeaderRef} className="review_header">REVIEWS</h2>
           <h2 ref={ReviewIndexRef} className="review_index">{currentReviewIndex + 1} - 8</h2>
         </div>
-        <div className="reviews" ref={reviewRef} onMouseEnter={hoverReviewEnter } onMouseLeave={hoverReviewLeave} onClick={reviewAnim}  >
+        <div className="reviews" ref={reviewRef} onMouseEnter={hoverReviewEnter } onMouseLeave={hoverReviewLeave} onClick={reviewAnim} >
           <div className="review"   >
             <h1 className="reviw_h1" ref={reviewQuoteRef}>"{Data[currentReviewIndex].quote}"</h1>
             <h3 ref={reviewNameRef} className="review_name__h3">{Data[currentReviewIndex].name}</h3>
