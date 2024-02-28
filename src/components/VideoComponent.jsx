@@ -18,7 +18,7 @@ const VideoComponent = ({src, setIsHoveringLink }) => {
     }
   return (
     <div className='video_container'>
-        {!isVideoLoaded && <img src={placeholder} className='placeholder'/> }  <video
+        {!isVideoLoaded ? <img src={placeholder} className='placeholder'/> : <video
           
           src={src}
           onMouseEnter={handleMouseEnter}
@@ -26,8 +26,8 @@ const VideoComponent = ({src, setIsHoveringLink }) => {
           autoPlay
           loop
           muted
-          onLoadedData={handleVideo}
-        />
+          
+        />}  
         
     </div>
    
