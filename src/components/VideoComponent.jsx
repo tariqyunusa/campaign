@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useState } from 'react'
 import placeholder from "../assets/placeholder.jpg"
 import "../styles/VideoComponent.css"
@@ -12,10 +12,12 @@ const VideoComponent = ({src, setIsHoveringLink }) => {
       const handleMouseLeave = () => {
         setIsHoveringLink(false);
       };
-
-    const handleVideo = () => {
+      const handleVideoLoad = () => {
         setIsVideoLoaded(true)
-    }
+      }
+    useEffect(() => {
+      setIsVideoLoaded(true)
+    },[])
   return (
     <div className='video_container'>
         {!isVideoLoaded ? <img src={placeholder} className='placeholder'/> : <video
@@ -26,7 +28,7 @@ const VideoComponent = ({src, setIsHoveringLink }) => {
           autoPlay
           loop
           muted
-          onLoadedData={handleVideo}
+          onLoadedData={handleVideoLoad}
         />}  
         
     </div>
