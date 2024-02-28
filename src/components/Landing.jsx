@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useLayoutEffect, useState } from "react";
+import React, { useEffect, useRef, useLayoutEffect, useState, lazy } from "react";
 import video from "../assets/output.mp4";
 import "../styles/landing.css";
 import  gsap  from "gsap";
 import {ScrollTrigger} from "gsap/ScrollTrigger"
+import VideoComponent from "./VideoComponent";
 gsap.registerPlugin(ScrollTrigger)
 
 
@@ -17,7 +18,7 @@ const landing = ({ setIsHoveringLink }) => {
     setIsHoveringLink(false);
   };
   const landingRef = useRef(null);
-  const videoRef = useRef(null);
+ 
   useLayoutEffect(() => {
     if(!videoDownloaded) {
       return;
@@ -26,14 +27,14 @@ const landing = ({ setIsHoveringLink }) => {
      
     });
    tl.to(landingRef.current,  {clipPath: `polygon(0 0, 100% 0, 100% 100%, 0% 100%)`, y: -20})
-   .to(videoRef.current, { scrollTrigger: {
-    trigger: videoRef.current,
-    // markers: true,
-    start: "top top",
-    scrub: true,
-    end: "bottom bottom",
-    ease: "power2.inOut",
-  },scale: 1})
+  //  .to(videoRef.current, { scrollTrigger: {
+  //   trigger: videoRef.current,
+  //   // markers: true,
+  //   start: "top top",
+  //   scrub: true,
+  //   end: "bottom bottom",
+  //   ease: "power2.inOut",
+  // },scale: 1})
     
    
   }, []);
@@ -46,15 +47,7 @@ const landing = ({ setIsHoveringLink }) => {
         </h1>
       </div>
       <div className="video">
-        <video
-          ref={videoRef}
-          src={video}
-          onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}
-          autoPlay
-          loop
-          muted
-        />
+        <VideoComponent src={video} />
       </div>
     </section>
   );
