@@ -8,15 +8,9 @@ gsap.registerPlugin(ScrollTrigger)
 
 
 
-const landing = ({ setIsHoveringLink }) => {
+const landing = () => {
   const [videoDownloaded, setIsVideoDownloaded] = useState(false)
-  const handleMouseEnter = () => {
-    setIsHoveringLink(true);
-  };
-
-  const handleMouseLeave = () => {
-    setIsHoveringLink(false);
-  };
+ 
   const landingRef = useRef(null);
  
   useLayoutEffect(() => {
