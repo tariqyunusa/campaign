@@ -26,7 +26,7 @@ const VideoComponent = ({src, setIsHoveringLink }) => {
           autoPlay
           loop
           muted
-          
+          onLoadedData={handleVideo}
         />}  
         
     </div>
